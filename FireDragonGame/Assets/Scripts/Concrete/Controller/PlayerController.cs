@@ -13,12 +13,14 @@ namespace UdemyFirsGame.Controller
         Jump _jump;
         InputController _inputController;
         FireSpwaner _fireSpwaner;
+        [SerializeField] AudioSource _audioSource;
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _jump = GetComponent<Jump>();
             _fireSpwaner = GetComponent<FireSpwaner>();
             _inputController = new InputController();
+          
         }
 
         private void Update()
@@ -38,6 +40,7 @@ namespace UdemyFirsGame.Controller
             if (_isPlaying)
             {
                 _jump.JumpMovement(_rigidbody2D);
+                _audioSource.Play();
                 _isPlaying = false;
             }
             

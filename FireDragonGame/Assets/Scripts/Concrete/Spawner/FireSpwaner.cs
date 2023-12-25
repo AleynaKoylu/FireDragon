@@ -10,6 +10,7 @@ namespace UdemyFirsGame.Spawner
         [SerializeField] float _delayFire = 1f;
         float _fireTime;
         bool _canFire;
+        [SerializeField] AudioSource _audioSource;
         private void Update()
         {
             _fireTime += Time.deltaTime;
@@ -28,8 +29,8 @@ namespace UdemyFirsGame.Spawner
             {
                 int _numberFire = Random.Range(0, _fire.Count);
                 _fire[_numberFire].SetActive(true);
-               
-                _canFire=false;
+                _audioSource.Play();
+                _canFire =false;
             }
 
         }

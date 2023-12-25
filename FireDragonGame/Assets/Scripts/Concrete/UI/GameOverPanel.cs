@@ -12,7 +12,7 @@ namespace UdemyFirsGame.UI
         }
         public void NoButton()
         {
-
+            Application.Quit();
         }
     }
 }
